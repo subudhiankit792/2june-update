@@ -1,0 +1,64 @@
+<!-- associateForm.html -->
+<template>
+    <div class="container">
+        <!-- Heading -->
+        <h1 class="heading">PCS GLOBAL PVT Limited</h1>
+        <h2 class="sub-heading">Web Development, Consultant, IT Security</h2>
+        <h3 class="address">Corporate Head Office</h3>
+        <p class="address">Primarc Tower, DN-36, 11th Floor, Suite No-1101, Sector V, Salt Lake Kolkata-91</p>
+
+        <!-- Personal Information -->
+        <template if:false={isRecordIdAvailable}>
+        <lightning-card title="PERSONAL INFORMATION">
+        <div class="slds-form-element slds-form-element_horizontal">
+            <label class=”slds-form-element__labelslds-p-left—xx-small”></label>
+        <div class=”slds-form-element__control”>
+            <lightning-input name="Name" class="validate" value={Name} type="text" onchange={handleInputChange} label="Name (Mr/Miss/Mrs):" required></lightning-input><br>
+           <lightning-input name="FatherName" class="validate"  value={fatherName} type="text" onchange={handleInputChange} label="Father Name:" required></lightning-input><br>
+            <lightning-input name="MotherName" class="validate"  value={motherName} type="text" onchange={handleInputChange} label="Mother Name:" required></lightning-input><br>
+            <lightning-input name="PresentAddress" calss="validate"  value={presentAddress} type="text" onchange={handleInputChange} label="Present Address:" required></lightning-input><br>
+            <lightning-input name="PermanentAddress" calss="validate"  value={permananentAddress} type="text" onchange={handleInputChange} label="Permanent Address(As per Aadhar Card):" required></lightning-input><br>
+            <lightning-input name="Email" class="validate" type="email"  value={email} label="Email Id" onchange={handleInputChange} required></lightning-input><br>
+            <lightning-input name="ContactNumber" class="validate"  value={contactNumber} type="Phone" onchange={handleInputChange} label="Contact Number:" required></lightning-input><br>
+            <lightning-input name="AlternativeContactNumber"  value={altContactNumber} class="validate" onchange={handleInputChange} type="Phone" label="Alternative Contact Number"></lightning-input><br>
+            <lightning-input name="WhatsAppNumber" class="validate" value={whatsappNumber} type="Phone" onchange={handleInputChange} label="What's App Number:" required></lightning-input><br>
+            <lightning-input name="ParentsContact" class="validate"  value={parentContactNumber} type="Phone" onchange={handleInputChange} label="Parent's Contact Number: Father/Mother:" required></lightning-input><br>
+            <lightning-combobox name="Gender" label="Gender" value={gender}
+                 placeholder="select gender" options={options} onchange={handleInputChange} required></lightning-combobox><br>
+            <lightning-input name="DOB" type="Date" value={dateOfBirth} onchange={handleInputChange} label="Date of Birth" required></lightning-input><br>
+            <lightning-combobox name="BloodGroup" label="Blood Group" value={bloodGroup}
+                placeholder="select blood group" options={bloodOptions} onchange={handleInputChange}></lightning-combobox><br>
+            <lightning-input name="Religion"  value={religion} onchange={handleInputChange} type="Text" label="Religion"></lightning-input><br>
+            <lightning-input name="Aadhar"  value={aadhaarNumber} onchange={handleInputChange} class="validate" type="Text" label="Aadhar Card Number" required></lightning-input><br>
+            <lightning-input name="Pan"  value={panNumber} onchange={handleInputChange} class="validate" type="Text" label="Pan Card No" required></lightning-input><br>
+            <lightning-input name="VoterId"  value={voterIdNumber} onchange={handleInputChange} class="validate" type="Text" label="Voter Id Card No" ></lightning-input><br>
+            <lightning-input name="Passport"  value={passportNumber} onchange={handleInputChange} class="validate" type="Text" label="Passport No"></lightning-input><br>
+            <lightning-input name="picture"  value={image} onchange={handleInputChange} type="URL" label="Please upload your picture"></lightning-input><br>
+            <lightning-input-rich-text label="Please upload your picture"></lightning-input-rich-text><br>    
+        </div>
+        </div>
+        <div class="reservation-button">
+            <button onclick={handleClick} >Submit></button>
+        </div>
+        
+    </lightning-card>
+</template>
+<template if:true={isRecordIdAvailable}>
+    <c-familybackground record-id={recordId}></c-familybackground>
+    <!--<c-joining-form-page2 record-id={recordId}></c-joining-form-page2>
+    <c-hsc record-id={recordId}></c-hsc>
+    <c-diploma record-id={recordId}></c-diploma>
+    <c-graduation record-id={recordId}></c-graduation>
+    <c-postgraduation record-id={recordId}></c-postgraduation>
+    <c-joining-form-page3 record-id={recordId}></c-joining-form-page3>
+    <c-bankdetails record-id={recordId}></c-bankdetails>-->
+</template>
+        <!-- Declaration -->
+        <!-- <h2 class="section-heading">DECLARATION</h2>
+        <div class="form-section">
+            <h2 >I hereby declare that I will obey the Code of Conduct and have understood the rules applicable to The Perennation Computer Solutions Global Pvt. Ltd. associate and do agree to abide by them.</h2>
+        </div>
+         -->
+        
+    </div>   
+</template>

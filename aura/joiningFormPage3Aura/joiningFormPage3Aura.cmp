@@ -1,0 +1,4 @@
+<aura:component implements="lightning:isUrlAddressable">
+    <c:joiningFormPage3></c:joiningFormPage3>
+
+</aura:component>

@@ -1,0 +1,4 @@
+<aura:component implements="lightning:isUrlAddressable">
+    <c:hsc></c:hsc>
+
+</aura:component>

@@ -1,0 +1,4 @@
+<aura:component implements="lightning:isUrlAddressable">
+    <c:familybackground></c:familybackground>
+
+</aura:component>

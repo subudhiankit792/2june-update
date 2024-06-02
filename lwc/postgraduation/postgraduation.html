@@ -1,0 +1,50 @@
+<template>
+    <div class="container">
+         <!-- Heading -->
+         <h1 class="heading">PCS GLOBAL PVT Limited</h1>
+         <h2 class="sub-heading">Web Development, Consultant, IT Security</h2>
+         <h3 class="address">Corporate Head Office</h3>
+         <p class="address">Primarc Tower, DN-36, 11th Floor, Suite No-1101, Sector V, Salt Lake Kolkata-91</p>
+         <template if:false={isRecordIdAvailable}>
+        <lightning-card title="EDUCATION">       
+        <!-- Post Graduation Details (MCA) -->
+        
+        <div class="slds-form-element slds-form-element_horizontal">
+            <label class=”slds-form-element__labelslds-p-left—xx-small”>POSTGRADUATION</label><br>
+        <div class=”slds-form-element__control”>
+            <lightning-combobox name="PG_University_state__c" 
+                                id="pg"
+                                label="PG University state"
+                                value={stateofuniversityPg}
+                                placeholder="select state"
+                                options={stateOptions}
+                                onchange={handleInputChange}></lightning-combobox><br>               
+                <lightning-input name="PG_University_Name__c" class="validate" value={nameofuniversityPg} type="text" onchange={handleInputChange} label="PG University Name"></lightning-input><br>
+                <lightning-input name="PG_University_RegNo_RollNo__c" class="validate" value={UniversityRollno} type="text" onchange={handleInputChange} label="PG University RegNo/RollNo"></lightning-input><br>
+                <lightning-combobox name="PG_college_state__c" 
+                                    id="pgcollege"
+                                    label="PG college state"
+                                    value={stateofcollegePg}
+                                    placeholder="select state"
+                                    options={stateOptions}
+                                    onchange={handleInputChange}></lightning-combobox> <br>
+                <lightning-input name="PG_College_City_District__c" class="validate" value={citydistrictofCollege} type="text" onchange={handleInputChange} label="PG College City/District"></lightning-input><br>
+                <lightning-input name="PG_College_Name__c" class="validate" value={nameofPGCollege} type="text" onchange={handleInputChange} label="PG College Name"></lightning-input><br>
+                <lightning-input name="PG_Branch__c" class="validate" value={branchorSubject} type="text" onchange={handleInputChange} label="PG Branch"></lightning-input><br>
+                <lightning-input name="PG_Month_Year_of_passing__c" class="validate" value={datemonthyearofPassing} type="Date" onchange={handleInputChange} label="PG Month/Year of passing"></lightning-input><br>
+                <lightning-input name="PG_Percentage_CGPA__c" class="validate" value={percentageCgpa} type="text" onchange={handleInputChange} label="PG Percentage/CGPA"></lightning-input><br>
+                <lightning-input name="PG_Elective_Subjects__c" class="validate" value={electiveSubjects} type="text" onchange={handleInputChange} label="PG Elective Subjects"></lightning-input><br>
+        </div>
+        </div> 
+        <div class="reservation-button">
+            <button onclick={handleClick2} >Submit></button>
+            
+        </div> 
+        </lightning-card>
+         </template>
+        <template if:true={isRecordIdAvailable}>
+            <c-joining-form-page3 record-id={recordId}></c-joining-form-page3>
+        </template>
+        
+    </div>
+</template>

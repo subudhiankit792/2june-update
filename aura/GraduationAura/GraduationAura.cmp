@@ -1,0 +1,3 @@
+<aura:component implements="lightning:isUrlAddressable">
+        <c:graduation></c:graduation>
+</aura:component>

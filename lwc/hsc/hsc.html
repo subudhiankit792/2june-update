@@ -1,0 +1,50 @@
+<template>
+    <div class="container">
+         <!-- Heading -->
+         <h1 class="heading">PCS GLOBAL PVT Limited</h1>
+         <h2 class="sub-heading">Web Development, Consultant, IT Security</h2>
+         <h3 class="address">Corporate Head Office</h3>
+         <p class="address">Primarc Tower, DN-36, 11th Floor, Suite No-1101, Sector V, Salt Lake Kolkata-91</p>
+         <template if:false={isRecordIdAvailable}>
+        <lightning-card title="EDUCATION">       
+
+
+            <div class="slds-form-element slds-form-element_horizontal">
+                <label class=”slds-form-element__labelslds-p-left—xx-small”>HSC</label><br>
+            <div class=”slds-form-element__control”>
+                <lightning-combobox name="State_of_HSC_board__c" 
+                                    id="hsc"
+                                    label="State of HSC board"
+                                    value={stateofHSCboard}
+                                    placeholder="select state"
+                                    options={stateOptions}
+                                    onchange={handleInputChange}></lightning-combobox><br>
+                <lightning-input name="Name_of_HSC_board__c" class="validate" value={nameofHSCboard} type="text" label="Name of HSC board	" onchange={handleInputChange} required></lightning-input><br>
+                <lightning-input name="Name_of_HSC_college__c" class="validate" value={nameofHSCschool} type="text" label="Name of HSC college" onchange={handleInputChange} required></lightning-input><br>
+                <lightning-combobox name="State_of_HSC_12_college__c" 
+                                    id="coll"
+                                    label="State of HSC(12) college"
+                                    value={stateofHSCcollege}
+                                    placeholder="select state"
+                                    options={stateOptions}
+                                    onchange={handleInputChange}></lightning-combobox><br>
+                <lightning-input name="City_District_of_HSC_college__c" class="validate" value={citydistrictofHSCcollege} type="text" label="City/District of HSC college" onchange={handleInputChange} required></lightning-input><br>
+                <lightning-input name="Period_from_Too_HSC__c" class="validate" type="Date" value={periodfromtooHSC} label="Period from/Too HSC" onchange={handleInputChange} required></lightning-input><br>
+                <lightning-input name="Date_Month_Year_of_passing_HSC__c" class="validate" value={datemonthyearofpassingHSC} type="Date" label="Date/Month/Year of passing HSC" onchange={handleInputChange} required></lightning-input><br>
+                <lightning-input name="Percentage_CGPA_HSC__c" class="validate" type="Number" value={percentagecgpaHSC} label="Percentage/CGPA HSC" onchange={handleInputChange} required></lightning-input><br>
+                 </div>
+                </div>
+                <div class="reservation-button">
+                <button onclick={handleClick2} >Submit></button>
+                </div>
+        </lightning-card>
+         </template>
+         <template if:true={isRecordIdAvailable}>
+            
+            
+            <c-diploma record-id={recordId}></c-diploma>
+            
+        </template> 
+        
+    </div>
+</template>

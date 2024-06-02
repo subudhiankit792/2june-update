@@ -1,0 +1,77 @@
+<template>
+    <div class="container">
+         <!-- Heading -->
+         <h1 class="heading">PCS GLOBAL PVT Limited</h1>
+         <h2 class="sub-heading">Web Development, Consultant, IT Security</h2>
+         <h3 class="address">Corporate Head Office</h3>
+         <p class="address">Primarc Tower, DN-36, 11th Floor, Suite No-1101, Sector V, Salt Lake Kolkata-91</p>
+ 
+    <!-- Languages Known -->
+    <template if:false={isRecordIdAvailable}>
+        <lightning-card title="LANGUAGES KNOWN">
+            <div class="slds-form-element slds-form-element_horizontal">
+                <label class=”slds-form-element__labelslds-p-left—xx-small”></label>
+            <div class=”slds-form-element__control”>
+                <lightning-dual-listbox
+                    name="Speak__c"
+                    label="Speak"
+                    source-label="Available"
+                    selected-label="Selected"
+                    field-level-help="Choose your options"
+                    options={options}
+                    value={speak}
+                    onchange={handleInputChange}>
+                </lightning-dual-listbox>
+                <br>
+                <lightning-dual-listbox
+                    name="Read__c"
+                    label="Read"
+                    source-label="Available"
+                    selected-label="Selected"
+                    field-level-help="Choose your options"
+                    options={options}
+                    value={read}
+                    onchange={handleInputChange}>
+                </lightning-dual-listbox>
+                <br>
+                <lightning-dual-listbox
+                    name="Write__c"
+                    label="Write"
+                    source-label="Available"
+                    selected-label="Selected"
+                    field-level-help="Choose your options"
+                    options={options}
+                    value={write}
+                    onchange={handleInputChange}>
+                </lightning-dual-listbox>
+                <br>
+                <template if:true={errorMessage}>
+                    <div class="slds-text-color_error slds-m-top_small">{errorMessage}</div>
+                </template>
+                <lightning-button variant="brand" label="Submit" onclick={handleSubmit}></lightning-button>
+            </div>
+            </div>
+        </lightning-card>
+
+    <!-- Extra Curricular Activities -->
+    <lightning-card title="EXTRA CURRICULAR ACTIVITIES">
+        <div class="slds-form-element slds-form-element_horizontal">
+            <label class=”slds-form-element__labelslds-p-left—xx-small”></label>
+        <div class=”slds-form-element__control”>
+       <lightning-input name="Games__c" class="validate" value={games} type="text"  onchange={handleInputChange} label="Games"></lightning-input><br>
+       <lightning-input name="Social_Activities__c" class="validate" value={socialActivities} onchange={handleInputChange} type="text" label="Social Activities"></lightning-input><br>
+       <lightning-input name="Hobbies__c" class="validate" value={hobbies} type="text" onchange={handleInputChange} label="Hobbies"></lightning-input><br>
+        </div>
+    </div>
+        <div class="reservation-button">
+    <button onclick={handleClick3} >Submit></button>
+    
+</div>
+
+    </lightning-card>
+</template>
+<template if:true={isRecordIdAvailable}>
+    <c-bankdetails record-id={recordId}></c-bankdetails>
+</template>
+</div>
+</template>

@@ -1,0 +1,29 @@
+<template>
+    <div class="container">
+        <!-- Heading -->
+
+        <h1 class="heading">PCS GLOBAL PVT Limited</h1>
+        <h2 class="sub-heading">Web Development, Consultant, IT Security</h2>
+        <h3 class="address">Corporate Head Office</h3>
+        <p class="address">Primarc Tower, DN-36, 11th Floor, Suite No-1101, Sector V, Salt Lake Kolkata-91</p>
+    <!-- Bank Details for Stipend -->
+    <template if:false={isRecordIdAvailable}>
+    <lightning-card title="BANK DETAILS">
+        <div class="slds-form-element slds-form-element_horizontal">
+            <label class=”slds-form-element__labelslds-p-left—xx-small”></label>
+        <div class=”slds-form-element__control”>
+        <!-- Add fields for Bank Details for Stipend -->
+        <lightning-input name="Account_Holder_Name__c" class="validate" value={accountholderName} type="text" label="Account Holder Name" required></lightning-input><br>
+        <lightning-input name="IFSC_Code__c" class="validate" value={IFSCcode} type="text" label="IFSC Code" required></lightning-input><br>
+        <lightning-input name="Branch_Name__c" class="validate" value={branchName} type="text" label="Branch Name" required></lightning-input><br>
+        <lightning-input name="Account_Number__c" class="validate" value={accountNumber} type="text" label="Account Number" required></lightning-input><br>
+        <lightning-input name="Bank_Name__c" class="validate" value={bankName} type="text" label="Bank Name" required></lightning-input><br>
+    </div>
+    </div>
+    <div class="reservation-button">
+        <button onclick={handleClick} >Submit></button>
+    </div>
+    </lightning-card>
+</template>
+    </div>
+</template>
